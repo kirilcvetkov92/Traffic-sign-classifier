@@ -125,8 +125,9 @@ def crop(img, input_shape):
 
 def apply_model_to_image_raw_bytes(raw):
     img = decode_image_from_buf(raw)
+    readable_img = crop(img, (256, 256))
     img = crop(img, (IMAGE_SIZE, IMAGE_SIZE))
-    return img
+    return img, readable_img
     
 def download_file(url, file_path):
 

@@ -1,6 +1,4 @@
 ## Project: Build a Traffic Sign Recognition Program
-
-Creating a Great Writeup
 ---
 
 

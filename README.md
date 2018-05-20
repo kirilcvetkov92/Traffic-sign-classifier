@@ -58,12 +58,12 @@ Mininum class labels instances in validation data 30.0
 Maximum class labels instances in test data 750.0
 Minimum class labels instances in test data 60.0
 
-#### Data preprocess
+### Data preprocess
 
 I performed only small preprocessing technique which was quick win form me and enough good for my model. 
 For image data: pixel = pixel/ 255 which was a quick way that normalizes the points between 0 and 1 which fit well with the activation function expected input.
 
-***Data Augmentation***
+#### Data Augmentation
 
 The first thing I tried is to augment the data replicating the class labels which are rare in the dataset, so it can reduce the high variance of our model (Overfitting)
 
@@ -81,7 +81,7 @@ The augmentation techniques I tried were combinations of :
 ### Model Architecture
 Below are the details of the characteristics and qualities of the architecture, including the type of model used, the number of layers, and the size of each layer. Visualizations emphasizing particular qualities of the architecture are also included 
 
-***Inception modules***
+#### Inception modules
 
 Inspired by GoogleNet model (which was made by the foundation of DeepDream) I used 2 ***Inception modules*** in my neural network.
 It's basically stacking multiple pooling and convolution blocks, see on the picture below : 
@@ -89,7 +89,7 @@ It's basically stacking multiple pooling and convolution blocks, see on the pict
 
 To learn more about inception modules click [here](https://www.youtube.com/watch?v=VxhSouuSZDY).
 
-***Regularization***
+#### Regularization
 
 Success: 
 
@@ -100,7 +100,7 @@ Failure :
 * ***Batch normalization***: Tried but didn't improve anything ***Omitted in the final model***
 
 ***Initializer***
-Xavier weight initializer was used for this model
+* Xavier weight initializer was used for this model
 
 ***Activation functions***
 *  Relu
@@ -108,7 +108,7 @@ Xavier weight initializer was used for this model
 ***Optimizer***
 * Adam optimizer
 
-***Model sizes***
+#### Model sizes
 
 | Layer         		|     Description	        					| Input     | Output      |
 |:---------------------:|:---------------------------------------------:|:---------:|:-----------:| 
@@ -123,5 +123,34 @@ Xavier weight initializer was used for this model
 | Fully connected		|  scope=logits; pairwise connections between all nodes	  		| (?,300)          | (?,42)            |
 
 
-***Visualization of the model ***
+***Visualization of the model***
 ![Model architecture](/documentation/model.png)
+
+### Model Training
+
+#### Hyperparameter tuning  
+* LEARNING RATE = 0.0005
+* EPOCHS = 350 
+* BATCH SIZE = 128
+* Dropout keep probability rate : 0.5
+
+#### Optimizer 
+Adam optimizer
+
+### Solution Approach
+
+#### Description:
+It took me about ***1 hour*** and ***30 minutes*** to train the model on GetForce 1080Ti on about 350 iterations.
+After 1 hour and 30 minutes you should get 99.1%-99.4% accuracy on the train set with ***learning_rate=0.0005***,
+Then you can start decreasing the learning rate and you can easily achieve 99.45% on validation set.
+On every new loss/performance minimum I was decreasing the learning rate, and it's final value is 0.00001
+
+
+#### The final results are:
+* Train Accuracy = 100%
+* Validation Accuracy = 99.47845804988662%
+* Test Accuracy = 98.1472684010002%
+
+
+
+

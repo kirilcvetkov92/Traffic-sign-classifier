@@ -16,12 +16,12 @@ The goals / steps of this project are the following:
 
 ### Dependencies
 This lab requires:
-  tensorflow-gpu==1.7.0
-  scipy==1.0.0
-  matplotlib==2.0.0
-  numpy==1.14.2
-  opencv-contrib-python==3.4.0.12
-  sklearn==0.18.2
+  * tensorflow-gpu==1.7.0
+  * scipy==1.0.0
+  * matplotlib==2.0.0
+  * numpy==1.14.2
+  * opencv-contrib-python==3.4.0.12
+  * sklearn==0.18.2
 
 
 ### Dataset and Repository

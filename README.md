@@ -16,10 +16,13 @@ The goals / steps of this project are the following:
 
 ### Dependencies
 This lab requires:
+  tensorflow-gpu==1.7.0
+  scipy==1.0.0
+  matplotlib==2.0.0
+  numpy==1.14.2
+  opencv-contrib-python==3.4.0.12
+  sklearn==0.18.2
 
-* [CarND Term1 Starter Kit](https://github.com/udacity/CarND-Term1-Starter-Kit)
-
-The lab environment can be created with CarND Term1 Starter Kit. Click [here](https://github.com/udacity/CarND-Term1-Starter-Kit/blob/master/README.md) for the details.
 
 ### Dataset and Repository
 

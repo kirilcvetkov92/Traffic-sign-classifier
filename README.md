@@ -96,8 +96,8 @@ Success:
 * ***Dropout***: I used dropout only for the fully connected layers, which took me to the best performance for my training steps
 
 Failure :
-* ***L2 regularization***: Tried but didn't improve anything ***Ommited in the final model***
-* ***Batch normalization***: Tried but didn't improve anything ***Ommited in the final model***
+* ***L2 regularization***: Tried but didn't improve anything ***Omitted in the final model***
+* ***Batch normalization***: Tried but didn't improve anything ***Omitted in the final model***
 
 ***Initializer***
 Xavier weight initializer was used for this model
@@ -108,5 +108,20 @@ Xavier weight initializer was used for this model
 ***Optimizer***
 * Adam optimizer
 
+***Model sizes***
 
-Full 
+| Layer         		|     Description	        					| Input     | Output      |
+|:---------------------:|:---------------------------------------------:|:---------:|:-----------:| 
+| Convolution       	| scope:conv0; kernel: 7x7; stride:2x2; padding: Same; output_size=64  	    | (?,32,32,3)   | (?,16,16,64)     |
+| Inception  	      	| scope:Inception3a            	    | (?,16,16,64)    | (?,16,16,256)      |
+| Inception       	|  scope:Inception3b	    |  (?,16,16,256)    | (?,16,16,480)     |
+| Max pooling	      	|scope:pool2; kernel: 3x3; stride:2x2; padding: Same; output_size=64 		| (?,16,16,480) | (?,8,8,480)      |
+| Flatten				| Squeeze the cube into one dimension			| (?,8,8,480)      (?,30720)          |
+| Fully connected		| scope:fully_2; pairwise connections between all nodes	    | (?,30720)       | (?,200)         |
+| Fully connected		|  scope:fully_3; pairwise connections between all nodes		        | (?,400)       | (?,400)         |
+| Fully connected		|  scope:fully_4; pairwise connections between all nodes	  		| (?,400)           | (?,300)             |
+| Fully connected		|  scope=logits; pairwise connections between all nodes	  		| (?,300)          | (?,42)            |
+
+
+***Visualization of the model ***
+![Model architecture](/documentation/model.png)

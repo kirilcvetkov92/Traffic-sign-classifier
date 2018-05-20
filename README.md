@@ -6,7 +6,7 @@ Creating a Great Writeup
 
 The Project
 ---
-The goals / steps of this project are the following:
+The goals/steps of this project are the following:
 * Load the data set
 * Explore, summarize and visualize the data set
 * Design, train and test a model architecture
@@ -27,11 +27,88 @@ This lab requires:
 ### Dataset
 [Download the data set](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/traffic-signs-data.zip).
 
-### Load the data set
-After loading the dataset, we got the following information:
+### Load the data set and basic summary
+After loading the dataset, I got the following summary information:
 * Number of training examples is: 34799
 * Number of testing examples is: 12630
-* Number of validation examples is 4410
-* Image shape is (32 32, 3)
-* Number of classes labels is 43
+* Number of validation examples is: 4410
+* Image shape is: (32 32, 3)
+* Number of classes labels is: 43
 
+#### Exploratory visualization
+This grid of images is representing one chosen random image from of each class from the training set
+![Exploratory visualization](/documentation/data.png)
+
+**Distribution**
+
+Now we are going to explore the distribution and take look at the distribution of classes in the training, validation and test set.
+
+From the histograms below, we can clearly see that the distribution of train, validation, and test set is nearly the same, 
+but the problem is that there is a huge variability of the distribution between class instances within the dataset, 
+and we can further investigate whether it can cause some problems during our training, 
+and maybe we can develop augmentation techniques to equalize them.
+
+![Distribution](/documentation/graphs.png)
+
+
+Maximum class labels instances in train data 2010.0
+Minimum class labels instances in test data 180.0 
+
+Maximum class labels instances in validation data 240.0
+Mininum class labels instances in validation data 30.0 
+
+Maximum class labels instances in test data 750.0
+Minimum class labels instances in test data 60.0
+
+#### Data preprocess
+
+I performed only small preprocessing technique which was quick win form me and enough good for my model. 
+For image data: pixel = pixel/ 255 which was a quick way that normalizes the points between 0 and 1 which fit well with the activation function expected input.
+
+***Data Augmentation***
+
+The first thing I tried is to augment the data replicating the class labels which are rare in the dataset, so it can reduce the high variance of our model (Overfitting)
+
+The augmentation techniques I tried were combinations of : 
+
+* center zoom
+* sharpening 
+* Contrast
+* translation
+* rotation
+* salt and pepper noise
+    
+***Conclusion : I realized that data augmentation cannot make drastic improvements to the performance of my model, and the augmentation step was omitted due to slowing down the entire training procedure***
+
+### Model Architecture
+Below are the details of the characteristics and qualities of the architecture, including the type of model used, the number of layers, and the size of each layer. Visualizations emphasizing particular qualities of the architecture are also included 
+
+***Inception modules***
+
+Inspired by GoogleNet model (which was made by the foundation of DeepDream) I used 2 ***Inception modules*** in my neural network.
+It's basically stacking multiple pooling and convolution blocks, see on the picture below : 
+![Distribution](/documentation/inception.png)
+
+To learn more about inception modules click [here](https://www.youtube.com/watch?v=VxhSouuSZDY).
+
+***Regularization***
+
+Success: 
+
+* ***Dropout***: I used dropout only for the fully connected layers, which took me to the best performance for my training steps
+
+Failure :
+* ***L2 regularization***: Tried but didn't improve anything ***Ommited in the final model***
+* ***Batch normalization***: Tried but didn't improve anything ***Ommited in the final model***
+
+***Initializer***
+Xavier weight initializer was used for this model
+
+***Activation functions***
+*  Relu
+
+***Optimizer***
+* Adam optimizer
+
+
+Full 

@@ -13,7 +13,7 @@ The goals/steps of this project are the following:
 * Summarize the results with a written report
 
 ### Dependencies
-This lab requires:
+This project requires:
   * tensorflow-gpu==1.7.0
   * scipy==1.0.0
   * matplotlib==2.0.0
@@ -127,7 +127,6 @@ Failure :
 
 #### Visualization of the model 
 ![Model architecture](/documentation/model.png)
-
 ### Model Training
 
 #### Hyperparameter tuning  

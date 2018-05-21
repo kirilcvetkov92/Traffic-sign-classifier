@@ -21,6 +21,8 @@ This project requires:
   * opencv-contrib-python==3.4.0.12
   * sklearn==0.18.2
 
+## Dataset Exploration
+
 ### Dataset Summary
 
 [Download the data set](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/traffic-signs-data.zip).

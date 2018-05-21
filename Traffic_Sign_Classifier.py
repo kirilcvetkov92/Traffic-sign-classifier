@@ -1,7 +1,6 @@
 
 # coding: utf-8
 
-# # Self-Driving Car Engineer Nanodegree
 # 
 # ## Deep Learning
 # 

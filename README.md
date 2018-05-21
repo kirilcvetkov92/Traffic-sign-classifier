@@ -124,7 +124,7 @@ Failure :
 | Fully connected		| scope:fully_2; pairwise connections between all nodes	    | (?,30720)       | (?,200)         |
 | Fully connected		|  scope:fully_3; pairwise connections between all nodes		        | (?,400)       | (?,400)         |
 | Fully connected		|  scope:fully_4; pairwise connections between all nodes	  		| (?,400)           | (?,300)             |
-| Fully connected		|  scope=logits; pairwise connections between all nodes	  		| (?,300)          | (?,42)            |
+| Fully connected		|  scope=logits; pairwise connections between all nodes	  		| (?,300)          | (?,43)            |
 
 
 #### Visualization of the model 

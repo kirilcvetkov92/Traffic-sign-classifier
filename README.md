@@ -80,7 +80,7 @@ The augmentation techniques I tried were combinations of :
 * rotation
 * salt and pepper noise
     
-*** Conclusion: I realized that data augmentation cannot make drastic improvements to the performance of my model, and the augmentation step was omitted due to slowing down the entire training procedure***
+***Conclusion: I realized that data augmentation cannot make drastic improvements to the performance of my model, and the augmentation step was omitted due to slowing down the entire training procedure***
 
 ### Model Architecture
 Below are the details of the characteristics and qualities of the architecture, including the type of model used, the number of layers, and the size of each layer. Visualizations emphasizing particular qualities of the architecture are also included 

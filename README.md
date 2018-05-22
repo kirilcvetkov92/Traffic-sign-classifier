@@ -29,11 +29,11 @@ This project requires:
 
 #### Load the data set and basic summary
 After loading the dataset, I got the following summary information:
-* Number of training examples is: 34799
-* Number of testing examples is: 12630
-* Number of validation examples is: 4410
+* Number of training examples : 34799
+* Number of testing examples : 12630
+* Number of validation examples : 4410
 * Image shape is: (32 32, 3)
-* Number of classes labels is: 43
+* Number of classes labels : 43
 
 ### Exploratory visualization
 This grid of images is representing one chosen random image from of each class from the training set
